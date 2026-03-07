@@ -23,7 +23,9 @@ const displayFunction = async ()=>{
     main.classList = [];
     main.innerHTML = '';
     main.className = 'bg-base-200';
-    main.innerHTML = `
+    const div = document.createElement('div');
+    div.className = 'p-3'
+    div.innerHTML = `
             <header class="">
            <div class="navbar bg-base-100 shadow-sm">
             <div class="flex-1"> 
@@ -74,23 +76,59 @@ const displayFunction = async ()=>{
            </div>
        </section>
        
-       <section class="grid grid-cols-4 w-11/12 mx-auto mt-11">
-            
-               <div class="bg-white border-y-green-500 rounded-xl border-y-[5px] p-3 space-y-4">
-               <div class="flex justify-between">
-                  <span><img src="./assets/Open-Status.png" alt=""></span>
-                  <span class="btn">High</span>
-               </div>
-               <h1 class="text-2xl font-bold">Fix navigation menu on mobile devices</h1>
-               <p class="text-xl text-[#64748B]">The navigation menu doesn't collapse properly on mobile devices...</p>
-               <div class="">
-                   
-               </div>
-               <hr class="opacity-10">
-               <p>#1 by john_doe</p>
-               <p>1/15/2024</p>
-            </div>
-            
+       <section id="" class="grid grid-cols-4 w-11/12 mx-auto mt-11 gap-3">
+            ${funcLun(all)}
        </section>
     `
+    main.append(div);
+}
+const funcLun = (event)=>{
+    const ans =  event.map(e => {
+           return value = ` <div class="bg-white ${borderFunc(e.status)} rounded-xl border-y-[5px] p-3 space-y-4">
+               <div class="flex justify-between">
+                  <span><img src="./assets/${e.status}-Status.png" alt=""></span>
+                  <span class="btn ${funcPriorty(e.priority)}">${e.priority.toUpperCase()}</span>
+               </div>
+               <h1 class="text-2xl font-bold">${e.title}</h1>
+               <p class="text-xl text-[#64748B]">${e.description}</p>
+               <div class="flex gap-3 flex-wrap">
+                   ${functionLevel(e.labels)}
+               </div>
+               <hr class="opacity-10">
+               <p>${e.author}</p>
+               <p>${e.createdAt}</p>
+            </div>`
+     });
+     
+     return ans.join(" ");   
+}
+const functionLevel = (arr)=>{
+    const ans =  arr.map(e =>{
+         if (e === 'bug'){
+            return `<span class="btn text-red-400 border-red-400 rounded-xl"><i class="fa-solid fa-bug"></i>Bug</span>`;
+         }else if ( e === 'help wanted'){
+             return `<span class="btn text-yellow-400 font-bold border-yellow-400 rounded-xl"><i class="fa-solid fa-life-ring"></i>Help wanted</span>`;
+         }else if ( e === 'enhancement'){
+             return `<span class="btn text-green-400 font-bold border-green-400 rounded-xl"><i class="fa-regular fa-star"></i>Enhancement</span>`;
+         }else if(e === 'good first issue'){
+             return `<span class="btn text-blue-400 font-bold border-blue-400 rounded-xl"><i class="fa-solid fa-thumbs-up"></i>Good first issue</span>`;
+         }
+         return `<span class="btn  rounded-xl"><i class="fa-brands fa-accusoft"></i>Documentation</span>`;
+     })
+     return ans.join(" ");
+}
+const borderFunc = (status) =>{
+      if (status === 'closed'){
+          return `border-y-purple-500`;
+      }
+      return 'border-y-green-500';
+}
+
+const funcPriorty = (e)=>{
+     if (e === 'high'){
+         return 'text-red-500 border-red-500 rounded';
+     }else if (e == 'medium') {
+        return 'text-yellow-500 border-yellow-500 rounded';
+     }
+     return 'text-gray-500 border-gray-500 rounded';
 }
