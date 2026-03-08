@@ -15,7 +15,7 @@
     
     <main class="bg-base-200">    
        <header class="">
-           <div class="navbar bg-base-100 shadow-sm">
+           <div class="navbar bg-base-100 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between">
             <div class="flex-1"> 
                 <a class="btn btn-ghost text-xl"><i class="fa-brands fa-github"></i>GitHub Issues Tracker</a>  
             </div>
@@ -48,7 +48,7 @@
        </section>
        <section class="w-11/12 mx-auto">
            <div class="navbar bg-base-100 shadow-sm mt-8 p-5 space-x-4 flex justify-between">
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-3 flex-1">
                     <div>
                     <img src="./assets/Aperture.png" alt="">
                     </div>
@@ -57,7 +57,7 @@
                         <p class="text-[#64748B] text-xl">Track and manage your project issues</p>
                     </div> 
                 </div>
-                <div class="space-x-4">
+                <div class="space-x-4 flex flex-col sm:flex-row flex-1 justify-end">
                     <span><i class="fa-solid fa-circle text-green-500"></i>Open</span>
                     <span><i class="fa-solid fa-circle text-purple-500"></i>Closed</span>
                 </div>
@@ -75,7 +75,7 @@
             <!-- <h3 class="text-lg font-bold">Hello!</h3>
             <p class="py-4">Press ESC key or click the button below to close</p> -->
             <div id="modal_add">
-                
+
             </div>
             <div class="modal-action">
             <form method="dialog">

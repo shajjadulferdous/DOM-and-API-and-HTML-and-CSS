@@ -45,7 +45,7 @@ const displayFunction =  (containers)=>{
     const cards = funcLun(containers);
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
-    div.className = 'p-4 grid  grid-cols-2 md:grid-cols-4 gap-5';
+    div.className = 'p-4 grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3  xl:grid-cols-4 gap-5';
     cards.forEach(element => {
         const divElement = document.createElement('div');
         divElement.innerHTML = element;
