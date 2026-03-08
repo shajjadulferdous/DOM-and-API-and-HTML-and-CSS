@@ -84,7 +84,7 @@ const displayFunction = async ()=>{
 }
 const funcLun = (event)=>{
     const ans =  event.map(e => {
-           return value = ` <div class="bg-white ${borderFunc(e.status)} rounded-xl border-y-[5px] p-3 space-y-4">
+           return value = ` <div class="bg-white ${borderFunc(e.status)} rounded-xl border-t-[5px] p-3 space-y-4">
                <div class="flex justify-between">
                   <span><img src="./assets/${e.status}-Status.png" alt=""></span>
                   <span class="btn ${funcPriorty(e.priority)}">${e.priority.toUpperCase()}</span>
@@ -95,7 +95,7 @@ const funcLun = (event)=>{
                    ${functionLevel(e.labels)}
                </div>
                <hr class="opacity-10">
-               <p>${e.author}</p>
+               <p># ${e.id}${e.author}</p>
                <p>${e.createdAt}</p>
             </div>`
      });
@@ -119,9 +119,9 @@ const functionLevel = (arr)=>{
 }
 const borderFunc = (status) =>{
       if (status === 'closed'){
-          return `border-y-purple-500`;
+          return `border-t-purple-500`;
       }
-      return 'border-y-green-500';
+      return 'border-t-green-500';
 }
 
 const funcPriorty = (e)=>{
