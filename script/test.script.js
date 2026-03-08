@@ -172,5 +172,21 @@ document.getElementById('search-issues').addEventListener('click' ,async ()=>{
      input.value='';
      LoaddingFunction(true);
      removeBtnPrimary();
+     if ( !ans || ans.length == 0){
+          const cont = document.getElementById('card-container');
+          cont.innerHTML = '';
+          const issues = document.getElementById('issues-count');
+          issues.innerText = 0;
+          const div = document.createElement('div');
+          div.className = 'p-32 flex justify-center items-center flex-col';
+          div.innerHTML = `
+            <div class="text-[100px] font-bold"><i class="fa-solid fa-radiation"></i></div>
+            <div class="font-bold text-4xl">NO Issue Found</div>
+         `
+         cont.append(div);
+         LoaddingFunction(false);
+         return;
+     }
      displayFunction(ans);
+
 }) 
