@@ -1,8 +1,19 @@
 let all = [];
 let Open = [];
 let Closed = [];
-
+const LoaddingFunction = (value)=>{
+      const containValue = document.getElementById('loading-container');
+      const cardContainer = document.getElementById('card-container');
+      if ( value === true){
+           containValue.classList.remove('hidden');
+           cardContainer.classList.add('hidden');
+      }else{
+           containValue.classList.add('hidden');
+           cardContainer.classList.remove('hidden');
+      }
+}
 const informationCollection = async() =>{
+    LoaddingFunction(true);
     const allIssues = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues`);
     const allValue  = await allIssues.json();
     const issues = allValue?.data;
@@ -15,9 +26,11 @@ const informationCollection = async() =>{
 informationCollection();
 
 const selectBtn = (id)=>{
+    LoaddingFunction(true);
     console.log(id);
     removeBtnPrimary();
     const btn = document.getElementById(id);
+    
     if ( id === 'all'){
          displayFunction(all);
     }
@@ -53,6 +66,7 @@ const displayFunction =  (containers)=>{
     });
     cardContainer.appendChild(div);
     console.log(cardContainer);
+    LoaddingFunction(false);
 }
 const funcvalue = (status)=>{
     if (status === 'open'){
@@ -67,7 +81,7 @@ const showCard = async (id)=>{
    const modalAdd = document.getElementById('modal_add');
    modalAdd.innerHTML = ` <div class="space-y-5">
         <h1 class="text-3xl font-bold">${e.title}</h1>
-        <div class="flex gap-4 items-center">
+        <div class="flex gap-2 items-center">
             <span class="${funcvalue(e.status)
             }">${e.status}</span>
             <span>&#8226;</span>
@@ -156,6 +170,7 @@ document.getElementById('search-issues').addEventListener('click' ,async ()=>{
      const input = document.getElementById('search-input');
      const ans = await getSearchList(input.value);
      input.value='';
+     LoaddingFunction(true);
      removeBtnPrimary();
      displayFunction(ans);
 }) 
