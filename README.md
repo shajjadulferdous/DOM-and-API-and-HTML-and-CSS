@@ -8,14 +8,14 @@
 
 ### let 
 
-1.block scoped
-2.New
+1. block scoped
+2. New
 3. we can reasign it 
 4. we can't redeclare it
 
 ## const 
-1.block scoped
-2.New
+1. block scoped
+2. New
 3. we can't reasign it 
 4. we can't redeclare it
 
@@ -28,7 +28,7 @@ the spread operator  is used to expand or spread out the elements of the object 
 transform each elements and return new array  
 
 ### filter():
- select element bassed on the condition  and return new array
+select element bassed on the condition  and return new array
 
 ### forEach:
 run a function for each element but return nothing 
