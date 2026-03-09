@@ -117,7 +117,7 @@ const funcLun = (event)=>{
                   <span class=" p-2  border rounded-xl text-[12px] ${funcPriorty(e.priority)}">${e.priority.toUpperCase()}</span>
                </div>
                <h1 class="text-lg font-bold">${e.title}</h1>
-               <p class="text-sm text-[#64748B]">${e.description}</p>
+               <p class=" text-[#64748B]">${e.description}</p>
                <div class="flex gap-3 flex-wrap text-[12px]">
                    ${functionLevel(e.labels)}
                </div>
