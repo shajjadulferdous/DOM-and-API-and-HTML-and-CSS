@@ -1,41 +1,14 @@
-# What is the difference between var, let, and const?
+# Dynamic Web App with API Integration more details
 
-## var
-1 .functional scope
-2 . Old
-3 . we can Reasign it 
-4 . we can redeclare it
 
-### let 
+Created a dynamic web application using HTML, CSS, Tailwind CSS, and DaisyUI. The application fetches data from an external API and displays it in a clean and responsive UI. This project demonstrates skills in API integration, responsive design, and modern front-end development.
 
-1. block scoped
-2. New
-3. we can reasign it 
-4. we can't redeclare it
-
-## const 
-1. block scoped
-2. New
-3. we can't reasign it 
-4. we can't redeclare it
-
-# 2. What is the spread operator (...)?
-the spread operator  is used to expand or spread out the elements of the object , of an array or iterable into individual elements. it makes copying , margining and passing data much easier.
-
-# 3. What is the difference between map(), filter(), and forEach()?
-
-### map():
-transform each elements and return new array  
-
-### filter():
-select element bassed on the condition  and return new array
-
-### forEach:
-run a function for each element but return nothing 
-
-# 4. What is an Arrow Function?
-an arrow function is a shorter and clearner way to write functions . It is itroduce in ES6 . 
-it uses arrow symbol(=>) instead of function keyword.
-
-# 5. 5️⃣ What are template literals?
-Template Literals are a feature in javascript that allow crate string using backticks instead of dobule ticks ans single ticks . it makes easier to insert variables and write multiline strings
+## 🚀 Key Features
+#### 🔗 Integration with external API for real-time data
+#### 📱 Fully responsive design (mobile, tablet, desktop)
+#### 🎨 Modern UI built with Tailwind CSS & DaisyUI
+#### ⚡ Dynamic data rendering using JavaScript
+#### 🧩 Clean and reusable component-based structure
+#### netlify link : https://jocular-florentine-a591aa.netlify.app/
+For visit : username : admin
+           password : admin123
